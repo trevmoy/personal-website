@@ -88,20 +88,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Typing animation for hero section
     const heroTitle = document.querySelector('.hero-content h1');
     if (heroTitle) {
-        const text = heroTitle.innerHTML;
-        heroTitle.innerHTML = '';
-        
-        let i = 0;
-        function typeWriter() {
-            if (i < text.length) {
-                heroTitle.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 50);
-            }
-        }
-        
-        // Start typing animation after a short delay
-        setTimeout(typeWriter, 1000);
+        // Skip typing animation to preserve HTML structure
+        // The highlight span will render correctly without animation
+        heroTitle.style.opacity = '1';
     }
     
     // Intersection Observer for animations
