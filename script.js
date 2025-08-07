@@ -43,40 +43,59 @@ document.addEventListener('DOMContentLoaded', function() {
     // Contact form handling
     const contactForm = document.querySelector('.contact-form');
     
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
         // Get form data
         const formData = new FormData(this);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const message = formData.get('message');
-        
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message')
+        };
+
         // Basic validation
-        if (!name || !email || !message) {
+        if (!data.name || !data.email || !data.message) {
             alert('Please fill in all fields.');
             return;
         }
-        
-        if (!isValidEmail(email)) {
+
+        if (!isValidEmail(data.email)) {
             alert('Please enter a valid email address.');
             return;
         }
-        
-        // Show success message (you can replace this with actual form submission)
-        alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
-        
-        // Reset form
-        this.reset();
-        
-        // In a real application, you would send the data to a server here
-        // Example:
-        // fetch('/submit-form', {
-        //     method: 'POST',
-        //     body: formData
-        // }).then(response => {
-        //     // Handle response
-        // });
+
+        // Show loading state
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                alert(`Thank you, ${data.name}! Your message has been sent. I'll get back to you soon.`);
+                this.reset();
+            } else {
+                alert(result.error || 'Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Failed to send message. Please try again or contact me directly.');
+        } finally {
+            // Reset button state
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
     });
     
     // Email validation function
