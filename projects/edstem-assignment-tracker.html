@@ -73,7 +73,10 @@
 
                         <div class="project-gallery">
                             <div class="gallery-main">
-                                <img src="../images/ed-tracker.png" alt="EdStem Assignment Tracker Interface">
+                                <video controls width="800" height="450" poster="../images/ed-tracker.png">
+                                    <source src="../videos/ed-tracker-demo.mov" type="video/quicktime">
+                                    Your browser does not support the video tag.
+                                </video>
                             </div>
                             <div class="gallery-thumbnails">
                                 <img src="../images/ed-tracker.png" alt="Main Interface" class="thumbnail active">
@@ -291,7 +294,7 @@
     <script>
         // Image gallery functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const mainImage = document.querySelector('.gallery-main img');
+            const galleryMain = document.querySelector('.gallery-main');
             const thumbnails = document.querySelectorAll('.thumbnail');
             
             thumbnails.forEach(thumb => {
@@ -300,8 +303,20 @@
                     thumbnails.forEach(t => t.classList.remove('active'));
                     // Add active class to clicked thumbnail
                     this.classList.add('active');
-                    // Update main image
-                    mainImage.src = this.src.replace('200x150', '800x450');
+                    
+                    // Replace video with image or vice versa
+                    if (this.alt === 'Main Interface') {
+                        // Show video for main interface
+                        galleryMain.innerHTML = `
+                            <video controls width="800" height="450" poster="../images/ed-tracker.png">
+                                <source src="../videos/ed-tracker-demo.mov" type="video/quicktime">
+                                Your browser does not support the video tag.
+                            </video>
+                        `;
+                    } else {
+                        // Show image for other thumbnails
+                        galleryMain.innerHTML = `<img src="${this.src}" alt="${this.alt}">`;
+                    }
                 });
             });
         });
