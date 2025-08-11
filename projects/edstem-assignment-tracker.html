@@ -69,17 +69,17 @@
                     <!-- Project Overview -->
                     <div class="content-section">
                         <h2>Project Overview</h2>
-                        <p>This e-commerce platform is a comprehensive solution that provides users with a seamless shopping experience. Built with modern web technologies, it features a responsive design, secure payment processing, and robust backend architecture.</p>
-                        
+                        <p>This CLI tool helps students track their assignments and grades efficiently. Built with C++ and Python, it features a user-friendly interface and integrates with popular learning management system EdStem.</p>
+
                         <div class="project-gallery">
                             <div class="gallery-main">
-                                <img src="https://via.placeholder.com/800x450" alt="E-Commerce Website Homepage">
+                                <img src="../images/ed-tracker.png" alt="EdStem Assignment Tracker Interface">
                             </div>
                             <div class="gallery-thumbnails">
-                                <img src="https://via.placeholder.com/200x150" alt="Product Page" class="thumbnail active">
-                                <img src="https://via.placeholder.com/200x150" alt="Shopping Cart" class="thumbnail">
-                                <img src="https://via.placeholder.com/200x150" alt="Checkout Process" class="thumbnail">
-                                <img src="https://via.placeholder.com/200x150" alt="User Dashboard" class="thumbnail">
+                                <img src="../images/ed-tracker.png" alt="Main Interface" class="thumbnail active">
+                                <img src="../images/courses.png" alt="Course View" class="thumbnail">
+                                <img src="../images/filter-and-assignments.png" alt="Filter & Assignments" class="thumbnail">
+                                <img src="../images/generate-env.png" alt="Environment Setup" class="thumbnail">
                             </div>
                         </div>
                     </div>
@@ -89,34 +89,34 @@
                         <h2>Key Features</h2>
                         <div class="features-grid">
                             <div class="feature-item">
-                                <i class="fas fa-shopping-cart"></i>
-                                <h4>Shopping Cart</h4>
-                                <p>Persistent shopping cart with real-time updates and inventory management</p>
+                                <i class="fas fa-tasks"></i>
+                                <h4>Assignment Tracking</h4>
+                                <p>Track all your EdStem assignments with due dates, status, and completion progress</p>
                             </div>
                             <div class="feature-item">
-                                <i class="fas fa-credit-card"></i>
-                                <h4>Secure Payments</h4>
-                                <p>Integrated Stripe payment processing with SSL encryption</p>
+                                <i class="fas fa-chart-line"></i>
+                                <h4>Grade Analytics</h4>
+                                <p>Monitor your grades and performance across different courses and assignments</p>
                             </div>
                             <div class="feature-item">
-                                <i class="fas fa-user-cog"></i>
-                                <h4>User Accounts</h4>
-                                <p>Full user authentication system with order history and profiles</p>
+                                <i class="fas fa-filter"></i>
+                                <h4>Smart Filtering</h4>
+                                <p>Filter assignments by course, due date, status, or completion level</p>
                             </div>
                             <div class="feature-item">
-                                <i class="fas fa-search"></i>
-                                <h4>Advanced Search</h4>
-                                <p>Product search with filters, categories, and sorting options</p>
+                                <i class="fas fa-graduation-cap"></i>
+                                <h4>Course Management</h4>
+                                <p>Organize and view assignments across multiple courses in one place</p>
                             </div>
                             <div class="feature-item">
-                                <i class="fas fa-mobile-alt"></i>
-                                <h4>Responsive Design</h4>
-                                <p>Optimized for all devices with mobile-first approach</p>
+                                <i class="fas fa-terminal"></i>
+                                <h4>CLI Interface</h4>
+                                <p>Efficient command-line interface for quick access and automation</p>
                             </div>
                             <div class="feature-item">
-                                <i class="fas fa-cogs"></i>
-                                <h4>Admin Panel</h4>
-                                <p>Complete admin dashboard for product and order management</p>
+                                <i class="fas fa-cloud-download-alt"></i>
+                                <h4>EdStem Integration</h4>
+                                <p>Direct integration with EdStem API for real-time data synchronization</p>
                             </div>
                         </div>
                     </div>
@@ -126,32 +126,31 @@
                         <h2>Technical Implementation</h2>
                         <div class="tech-details">
                             <div class="tech-section">
-                                <h4>Frontend Architecture</h4>
+                                <h4>Core Architecture</h4>
                                 <ul>
-                                    <li>React.js with functional components and hooks</li>
-                                    <li>Redux for state management</li>
-                                    <li>React Router for client-side routing</li>
-                                    <li>Styled Components for modular CSS</li>
-                                    <li>Responsive design with CSS Grid and Flexbox</li>
+                                    <li>C++ for high-performance CLI application core</li>
+                                    <li>Python for API integration and data processing</li>
+                                    <li>Modular design with separation of concerns</li>
+                                    <li>Cross-platform compatibility (Windows, macOS)</li>
+                                    <li>Efficient memory management and error handling</li>
                                 </ul>
                             </div>
                             <div class="tech-section">
-                                <h4>Backend Development</h4>
+                                <h4>API Integration</h4>
                                 <ul>
-                                    <li>Node.js with Express.js framework</li>
-                                    <li>RESTful API design principles</li>
-                                    <li>JWT authentication and authorization</li>
-                                    <li>Password hashing with bcrypt</li>
-                                    <li>Input validation and sanitization</li>
+                                    <li>RESTful API communication with EdStem platform</li>
+                                    <li>HTTP client implementation for data fetching</li>
+                                    <li>JSON parsing and data serialization</li>
+                                    <li>Authentication token management</li>
+                                    <li>Rate limiting and error retry mechanisms</li>
                                 </ul>
                             </div>
                             <div class="tech-section">
-                                <h4>Database & Storage</h4>
+                                <h4>Data Management</h4>
                                 <ul>
-                                    <li>MongoDB with Mongoose ODM</li>
-                                    <li>Cloudinary for image storage and optimization</li>
-                                    <li>Database indexing for performance</li>
-                                    <li>Data validation and schema design</li>
+                                    <li>Local data caching for offline functionality</li>
+                                    <li>Data synchronization with remote EdStem API</li>
+                                    <li>Configuration file management</li>
                                 </ul>
                             </div>
                         </div>
@@ -162,19 +161,19 @@
                         <h2>Challenges & Solutions</h2>
                         <div class="challenges">
                             <div class="challenge-item">
-                                <h4>Payment Security</h4>
-                                <p><strong>Challenge:</strong> Implementing secure payment processing while maintaining user experience.</p>
-                                <p><strong>Solution:</strong> Integrated Stripe's secure payment gateway with proper error handling and PCI compliance.</p>
+                                <h4>API Authentication & Rate Limiting</h4>
+                                <p><strong>Challenge:</strong> Managing EdStem API authentication tokens and handling rate limits effectively.</p>
+                                <p><strong>Solution:</strong> Implemented intelligent token refresh mechanism and request queuing system to respect API limits while maintaining responsive user experience.</p>
                             </div>
                             <div class="challenge-item">
-                                <h4>Inventory Management</h4>
-                                <p><strong>Challenge:</strong> Preventing overselling and managing real-time inventory updates.</p>
-                                <p><strong>Solution:</strong> Implemented optimistic locking and database transactions to handle concurrent purchases.</p>
+                                <h4>Cross-Platform Compatibility</h4>
+                                <p><strong>Challenge:</strong> Ensuring the CLI tool works consistently across different operating systems and environments.</p>
+                                <p><strong>Solution:</strong> Used platform-agnostic libraries and thorough testing on Windows and macOS systems with proper build configurations.</p>
                             </div>
                             <div class="challenge-item">
-                                <h4>Performance Optimization</h4>
-                                <p><strong>Challenge:</strong> Loading large product catalogs efficiently.</p>
-                                <p><strong>Solution:</strong> Implemented pagination, lazy loading, and image optimization to improve load times.</p>
+                                <h4>Data Synchronization</h4>
+                                <p><strong>Challenge:</strong> Keeping local cached data in sync with live EdStem data while handling network interruptions.</p>
+                                <p><strong>Solution:</strong> Implemented robust sync algorithms with conflict resolution for uninterrupted workflow.</p>
                             </div>
                         </div>
                     </div>
@@ -186,19 +185,19 @@
                         <h3>Project Information</h3>
                         <div class="info-item">
                             <strong>Duration:</strong>
-                            <span>3 months</span>
+                            <span>2 months</span>
                         </div>
                         <div class="info-item">
                             <strong>Team Size:</strong>
-                            <span>Solo Project</span>
+                            <span>Team Project</span>
                         </div>
                         <div class="info-item">
                             <strong>Status:</strong>
-                            <span class="status-active">Active</span>
+                            <span class="status-active">Complete</span>
                         </div>
                         <div class="info-item">
                             <strong>Category:</strong>
-                            <span>Full-Stack Web Application</span>
+                            <span>CLI Application</span>
                         </div>
                     </div>
 
@@ -206,30 +205,27 @@
                         <h3>Technology Stack</h3>
                         <div class="tech-categories">
                             <div class="tech-category">
-                                <h4>Frontend</h4>
+                                <h4>Core Languages</h4>
                                 <div class="tech-list">
-                                    <span>React.js</span>
-                                    <span>Redux</span>
-                                    <span>React Router</span>
-                                    <span>Styled Components</span>
+                                    <span>C++</span>
+                                    <span>Python</span>
+                                    <span>JSON</span>
                                 </div>
                             </div>
                             <div class="tech-category">
-                                <h4>Backend</h4>
+                                <h4>Libraries & APIs</h4>
                                 <div class="tech-list">
-                                    <span>Node.js</span>
-                                    <span>Express.js</span>
-                                    <span>MongoDB</span>
-                                    <span>Mongoose</span>
+                                    <span>EdStem REST API</span>
+                                    <span>cURL/HTTP Client</span>
+                                    <span>CLI Libraries</span>
                                 </div>
                             </div>
                             <div class="tech-category">
-                                <h4>Tools & Services</h4>
+                                <h4>Tools & Development</h4>
                                 <div class="tech-list">
-                                    <span>Stripe API</span>
-                                    <span>Cloudinary</span>
-                                    <span>JWT</span>
-                                    <span>bcrypt</span>
+                                    <span>Git</span>
+                                    <span>Cross-platform Build</span>
+                                    <span>Testing Frameworks</span>
                                 </div>
                             </div>
                         </div>
