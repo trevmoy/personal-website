@@ -48,7 +48,7 @@
                         <span class="tech-tag">REST API</span>
                     </div>
                     <div class="project-actions">
-                        <a href="#video-demo" class="btn btn-primary">
+                        <a href="../videos/ed-tracker-demo.mov" class="btn btn-primary" target="_blank">
                             <i class="fas fa-play"></i> Video Demo
                         </a>
                         <a href="https://github.com/SP24-212/Edstem-Tracker" class="btn btn-outline" target="_blank">
@@ -71,12 +71,9 @@
                         <h2>Project Overview</h2>
                         <p>This CLI tool helps students track their assignments and grades efficiently. Built with C++ and Python, it features a user-friendly interface and integrates with popular learning management system EdStem.</p>
 
-                        <div class="project-gallery" id="video-demo">
+                        <div class="project-gallery">
                             <div class="gallery-main">
-                                <video controls width="800" height="450" poster="../images/ed-tracker.png">
-                                    <source src="../videos/ed-tracker-demo.mov" type="video/quicktime">
-                                    Your browser does not support the video tag.
-                                </video>
+                                <img src="../images/ed-tracker.png" alt="EdStem Assignment Tracker Interface">
                             </div>
                             <div class="gallery-thumbnails">
                                 <img src="../images/ed-tracker.png" alt="Main Interface" class="thumbnail active">
@@ -294,7 +291,7 @@
     <script>
         // Image gallery functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const galleryMain = document.querySelector('.gallery-main');
+            const mainImage = document.querySelector('.gallery-main img');
             const thumbnails = document.querySelectorAll('.thumbnail');
             
             thumbnails.forEach(thumb => {
@@ -303,20 +300,8 @@
                     thumbnails.forEach(t => t.classList.remove('active'));
                     // Add active class to clicked thumbnail
                     this.classList.add('active');
-                    
-                    // Replace video with image or vice versa
-                    if (this.alt === 'Main Interface') {
-                        // Show video for main interface
-                        galleryMain.innerHTML = `
-                            <video controls width="800" height="450" poster="../images/ed-tracker.png">
-                                <source src="../videos/ed-tracker-demo.mov" type="video/quicktime">
-                                Your browser does not support the video tag.
-                            </video>
-                        `;
-                    } else {
-                        // Show image for other thumbnails
-                        galleryMain.innerHTML = `<img src="${this.src}" alt="${this.alt}">`;
-                    }
+                    // Update main image
+                    mainImage.src = this.src.replace('200x150', '800x450');
                 });
             });
         });
